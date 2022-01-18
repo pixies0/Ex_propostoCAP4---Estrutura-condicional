@@ -51,7 +51,7 @@ int main(void)
 
     break;
   default:
-    printf("Você digitou uma opção inválida!");
+    printf("Voce digitou uma opcao invalida!");
   }
   return 0;
 }
