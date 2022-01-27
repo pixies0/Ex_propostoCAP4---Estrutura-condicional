@@ -4,19 +4,30 @@
 int main(void)
 {
 
-  char sexo;
+  int sexo;
   float altura, pesoIdeal;
-  printf("Sexo: ");
-  scanf(" %c", &sexo);
-  printf("Altura em m:");
+
+  printf("Altura em metros:");
   scanf("%f", &altura);
+  printf("Digite o sexo:");
+  printf("\n1 para masculino. ");
+  printf("\n2 para feminino.\n");
+  scanf("%d", &sexo);
 
-  if (sexo == 'f' || sexo == 'F')
-    pesoIdeal = (62.1 * altura) - 44.7;
-  if (sexo == 'm' || sexo == 'M')
-    pesoIdeal = (72.7 * altura) - 58;
-
-  printf("Peso ideal para o sexo %c: %.2f", sexo, pesoIdeal);
-
+  switch (sexo)
+  {
+  case 1:
+    pesoIdeal = 72.7 * altura - 58;
+    break;
+  case 2:
+    pesoIdeal = 62.1 * altura - 44.7;
+    break;
+  default:
+    printf("Opcao invalida.\n");
+    system("pause");
+    break;
+  }
+  printf("Peso ideal: %.2f", pesoIdeal);
+  system("cls");
   return 0;
 }
